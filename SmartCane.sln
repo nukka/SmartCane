@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane", "SmartCane.csproj", "{95D36227-9D7E-ACDC-3616-04448D259B35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane.Plugins", "SmartCane.Plugins.csproj", "{5EF4DDF4-02C1-2B2F-3978-515969188C3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane.Editor.Plugins", "SmartCane.Editor.Plugins.csproj", "{AA63236E-1546-05B1-B865-0A6CCDAA1A37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95D36227-9D7E-ACDC-3616-04448D259B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D36227-9D7E-ACDC-3616-04448D259B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D36227-9D7E-ACDC-3616-04448D259B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D36227-9D7E-ACDC-3616-04448D259B35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF4DDF4-02C1-2B2F-3978-515969188C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF4DDF4-02C1-2B2F-3978-515969188C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF4DDF4-02C1-2B2F-3978-515969188C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF4DDF4-02C1-2B2F-3978-515969188C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA63236E-1546-05B1-B865-0A6CCDAA1A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA63236E-1546-05B1-B865-0A6CCDAA1A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA63236E-1546-05B1-B865-0A6CCDAA1A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA63236E-1546-05B1-B865-0A6CCDAA1A37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
