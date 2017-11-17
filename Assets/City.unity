@@ -2631,6 +2631,7 @@ GameObject:
   - component: {fileID: 890932089}
   - component: {fileID: 890932088}
   - component: {fileID: 890932087}
+  - component: {fileID: 890932090}
   m_Layer: 0
   m_Name: SmartCane
   m_TagString: Untagged
@@ -2647,7 +2648,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.401, y: -0.64, z: 1.053}
   m_LocalScale: {x: 0.04, y: 0.05, z: 2.03}
-  m_Children: []
+  m_Children:
+  - {fileID: 1477340521}
   m_Father: {fileID: 779506806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2704,6 +2706,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 890932085}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &890932090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890932085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c87c91ece8f654ab8a2b5597f14bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  fireRate: 0.2
+  bulletSpawn: {fileID: 1477340521}
 --- !u!1001 &891502444
 Prefab:
   m_ObjectHideFlags: 0
@@ -4633,6 +4649,34 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 473796, guid: 49dbc362fdf0c7a49a3d5e436f8d6031, type: 2}
   m_PrefabInternal: {fileID: 316639026}
+--- !u!1 &1477340520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1477340521}
+  m_Layer: 0
+  m_Name: CanesTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477340521
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477340520}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.78, z: 0.531}
+  m_LocalScale: {x: 25, y: 20, z: 0.4926108}
+  m_Children: []
+  m_Father: {fileID: 890932086}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1489462761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a8081dad0949652458a38a771d5a7fa0, type: 3}
