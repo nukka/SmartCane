@@ -10,11 +10,18 @@ public class raycastscript : MonoBehaviour
 	private bool canShoot;
 	public Transform bulletSpawn;
 
-	public GameObject cube;
+	public GUIscript _GUIscript;
+
+	public GameObject typeOfPoint;
+
+
+
 	// Use this for initialization
 	void Start ()
 	{
 		Debug.Log ("Starting");
+		_GUIscript.writeSomething ();
+
 	}
 	
 	// Update is called once per frame
@@ -34,7 +41,7 @@ public class raycastscript : MonoBehaviour
 			}
 	
 		}
-	
+
 	}
 
 	void Shoot ()
@@ -49,14 +56,17 @@ public class raycastscript : MonoBehaviour
 			hitPoint.y = 0.05F;
 
 			Place (hitPoint);
+
+	
+
 		}
 
-
+	
 	}
 
 	void Place (Vector3 objPosition){
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
-		Instantiate (cube, objPosition, rotation);
+		Instantiate (typeOfPoint, objPosition, rotation);
 	}
 
 
