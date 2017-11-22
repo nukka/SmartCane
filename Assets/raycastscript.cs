@@ -10,6 +10,7 @@ public class raycastscript : MonoBehaviour
 	private bool canShoot;
 	public Transform bulletSpawn;
 
+	public GameObject cube;
 	// Use this for initialization
 	void Start ()
 	{
@@ -43,7 +44,20 @@ public class raycastscript : MonoBehaviour
 		Debug.Log ("Shot");
 
 		if (Physics.Raycast (ray, out hit, range)) {
-			Debug.Log ("Hit " + hit.collider.name);			
+			Debug.Log ("Hit " + hit.collider.name);	
+			Vector3 hitPoint = hit.point;
+			hitPoint.y = 0.05F;
+
+			Place (hitPoint);
 		}
+
+
 	}
+
+	void Place (Vector3 objPosition){
+		Quaternion rotation = Quaternion.Euler (0, 0, 0);
+		Instantiate (cube, objPosition, rotation);
+	}
+
+
 }
