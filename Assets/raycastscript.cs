@@ -20,7 +20,7 @@ public class raycastscript : MonoBehaviour
 	void Start ()
 	{
 		Debug.Log ("Starting");
-		_GUIscript.writeSomething ();
+
 
 	}
 	

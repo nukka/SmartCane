@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\raycastscript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ButtonClicks.cs">
     <Files>
-      <File FileName="Assets\raycastscript.cs" Line="24" Column="1" />
-      <File FileName="Assets\MainMenuButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUIscript.cs" Line="26" Column="31" />
+      <File FileName="Assets\raycastscript.cs" Line="23" Column="3" />
+      <File FileName="Assets\MainMenuButtons.cs" Line="19" Column="1" />
+      <File FileName="Assets\GUIscript.cs" Line="11" Column="1" />
+      <File FileName="Assets\SwitchViews.cs" Line="9" Column="2" />
+      <File FileName="Assets\ButtonClicks.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

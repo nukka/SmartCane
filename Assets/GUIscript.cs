@@ -8,7 +8,7 @@ public class GUIscript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		writeSomething ();
+
 	}
 	
 	// Update is called once per frame
