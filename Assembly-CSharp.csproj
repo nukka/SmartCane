@@ -51,8 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ButtonClicks.cs" />
-     <Compile Include="Assets\GUIscript.cs" />
      <Compile Include="Assets\MainMenuButtons.cs" />
      <Compile Include="Assets\raycastscript.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />

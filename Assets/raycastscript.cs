@@ -10,7 +10,6 @@ public class raycastscript : MonoBehaviour
 	private bool canShoot;
 	public Transform bulletSpawn;
 
-	public GUIscript _GUIscript;
 
 	public GameObject typeOfPoint;
 
@@ -64,10 +63,15 @@ public class raycastscript : MonoBehaviour
 	
 	}
 
-	void Place (Vector3 objPosition){
+	void Place (Vector3 objPosition)
+	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
 		Instantiate (typeOfPoint, objPosition, rotation);
 	}
 
+	public void talk(){
+		//Vector3 vec = new Vector3 (0, 20, 0);
+		Debug.Log ("moro");
+	}
 
 }
