@@ -5,13 +5,12 @@ using UnityEngine;
 public class raycastscript : MonoBehaviour
 {
 	public float range;
-	public float fireRate;
-	private float curFireRate;
-	private bool canShoot;
-	public Transform bulletSpawn;
-
-
+	public float rate;
+	private float curRate;
+	private bool canPlace;
+	public Transform pointSpawn;
 	public GameObject typeOfPoint;
+	public SwitchViews _SwitchViews;
 
 
 
@@ -19,23 +18,22 @@ public class raycastscript : MonoBehaviour
 	void Start ()
 	{
 		Debug.Log ("Starting");
-
-
+		_SwitchViews.ShowMapView ();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		curFireRate -= Time.deltaTime;
-		if (curFireRate <= 0) {
-			canShoot = true;
-			curFireRate = fireRate;
+		curRate -= Time.deltaTime;
+		if (curRate <= 0) {
+			canPlace = true;
+			curRate = rate;
 		} else {
-			canShoot = false;
+			canPlace = false;
 		}
 
 		if (Input.GetButton ("Fire1")) {
-			if (canShoot) {
+			if (canPlace) {
 				Shoot ();
 			}
 	
@@ -45,7 +43,7 @@ public class raycastscript : MonoBehaviour
 
 	void Shoot ()
 	{
-		Ray ray = new Ray (bulletSpawn.transform.position, bulletSpawn.transform.forward);
+		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
 		RaycastHit hit;
 		Debug.Log ("Shot");
 
@@ -55,11 +53,7 @@ public class raycastscript : MonoBehaviour
 			hitPoint.y = 0.05F;
 
 			Place (hitPoint);
-
-	
-
 		}
-
 	
 	}
 
@@ -67,11 +61,6 @@ public class raycastscript : MonoBehaviour
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
 		Instantiate (typeOfPoint, objPosition, rotation);
-	}
-
-	public void talk(){
-		//Vector3 vec = new Vector3 (0, 20, 0);
-		Debug.Log ("moro");
 	}
 
 }
