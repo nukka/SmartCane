@@ -10,6 +10,7 @@ public class SwitchViews : MonoBehaviour
 	public Text pointTypeIntroduction;
 	public GameObject character;
 	public ChangeHeight _ChangeHeight;
+	public Image crosshair;
 
 
 
@@ -41,12 +42,14 @@ public class SwitchViews : MonoBehaviour
 		intructionText.text = "Place points to map, press F2 when ready";
 		_ChangeHeight.change (15F);
 		pointTypeIntroduction.text = "Mouse right click = Regular point \nMouse left click = POI";  
+		crosshair.enabled = true;
 		
 	}
 
 	void ChangeCharacterPosition(Vector3 pos){
 		//Debug.Log (character.transform.position);
 		character.transform.position = pos;
+		crosshair.enabled = false;
 
 	}
 

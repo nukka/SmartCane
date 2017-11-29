@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class raycastscript : MonoBehaviour
 {
 	public float range;
@@ -12,6 +13,7 @@ public class raycastscript : MonoBehaviour
 	public GameObject regularPoint;
 	public GameObject pointOfInterest;
 	public SwitchViews _SwitchViews;
+
 
 
 

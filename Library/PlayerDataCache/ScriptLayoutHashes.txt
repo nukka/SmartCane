@@ -1,4 +1,4 @@
-WindowsStandalone
+OSXStandalone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelReset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneAndURLLoader
 7ba1e84ad3d2d8813486668e75f842ce Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.ExtinguishableParticleSystem
@@ -94,7 +94,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.BallUserControl
 f41c5222aaa4557bb9cafa1c24b37a94 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.AutoCam
-885921e867fc55cc4fc3f7eab02b309a Assembly-CSharp.dll:.SwitchViews
+fb7be463f5e07ad337da41a4412cd9cd Assembly-CSharp.dll:.SwitchViews
 6c156248975c65e334daa4cbfba64bd1 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectActivator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
