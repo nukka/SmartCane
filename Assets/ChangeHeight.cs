@@ -9,8 +9,7 @@ public class ChangeHeight : MonoBehaviour
 	void Start ()
 	{
 		controller = GetComponent<CharacterController> ();
-		change (1.8F);
-
+	
 	}
 
 	public void change (float charHeight)

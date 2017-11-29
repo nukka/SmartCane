@@ -9,7 +9,8 @@ public class raycastscript : MonoBehaviour
 	private float curRate;
 	private bool canPlace;
 	public Transform pointSpawn;
-	public GameObject typeOfPoint;
+	public GameObject regularPoint;
+	public GameObject pointOfInterest;
 	public SwitchViews _SwitchViews;
 
 
@@ -17,7 +18,6 @@ public class raycastscript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		Debug.Log ("Starting");
 		_SwitchViews.ShowMapView ();
 	}
 	
@@ -32,16 +32,11 @@ public class raycastscript : MonoBehaviour
 			canPlace = false;
 		}
 
-		if (Input.GetButton ("Fire1")) {
-			if (canPlace) {
-				Shoot ();
-			}
-	
-		}
+		PlacePointType ();
 
 	}
 
-	void Shoot ()
+	void Shoot (GameObject pointType)
 	{
 		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
 		RaycastHit hit;
@@ -51,16 +46,33 @@ public class raycastscript : MonoBehaviour
 			Debug.Log ("Hit " + hit.collider.name);	
 			Vector3 hitPoint = hit.point;
 			hitPoint.y = 0.05F;
+	
 
-			Place (hitPoint);
+			PlacePoint (hitPoint, pointType);
+
 		}
 	
 	}
 
-	void Place (Vector3 objPosition)
+	void PlacePoint (Vector3 objPosition, GameObject pointType)
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
-		Instantiate (typeOfPoint, objPosition, rotation);
+		Instantiate (pointType, objPosition, rotation);
+
+	}
+
+	void PlacePointType(){
+		if (Input.GetMouseButton (0)) {
+			if (canPlace) {
+				Shoot (regularPoint);
+			}
+		}
+
+		if (Input.GetMouseButton (1)) {
+			if (canPlace) {
+				Shoot (pointOfInterest);
+			}
+		}
 	}
 
 }
