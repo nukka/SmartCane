@@ -15,8 +15,6 @@ public class raycastscript : MonoBehaviour
 	public SwitchViews _SwitchViews;
 
 
-
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -30,6 +28,7 @@ public class raycastscript : MonoBehaviour
 		if (curRate <= 0) {
 			canPlace = true;
 			curRate = rate;
+		
 		} else {
 			canPlace = false;
 		}
@@ -38,19 +37,19 @@ public class raycastscript : MonoBehaviour
 
 	}
 
+	private Vector3 hitPoint = new Vector3(0, 0, 0);
 	void Shoot (GameObject pointType)
 	{
 		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
 		RaycastHit hit;
-		Debug.Log ("Shot");
 
 		if (Physics.Raycast (ray, out hit, range)) {
 			Debug.Log ("Hit " + hit.collider.name);	
-			Vector3 hitPoint = hit.point;
+			hitPoint = hit.point;
 			hitPoint.y = 0.05F;
-	
 
 			PlacePoint (hitPoint, pointType);
+
 
 		}
 	
@@ -60,6 +59,7 @@ public class raycastscript : MonoBehaviour
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
 		Instantiate (pointType, objPosition, rotation);
+
 
 	}
 
@@ -76,5 +76,6 @@ public class raycastscript : MonoBehaviour
 			}
 		}
 	}
+
 
 }
