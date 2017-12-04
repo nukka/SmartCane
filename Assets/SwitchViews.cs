@@ -12,6 +12,8 @@ public class SwitchViews : MonoBehaviour
 	public ChangeHeight _ChangeHeight;
 	public Image crosshair;
 
+	public raycastscript _raycastscrip;
+
 
 
 	void Update ()
@@ -19,13 +21,14 @@ public class SwitchViews : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.F1)) {
 			ShowMapView ();
+
 		}
 
 		if (Input.GetKeyDown (KeyCode.F2)) {
 			ShowFPView ();
-			Vector3 vec = new Vector3 (2, 7, -25);
-			ChangeCharacterPosition (vec);
+			ChangeCharacterPosition (_raycastscrip.GetFirstPointPosition());
 		}
+	
 	}
 
 	public void ShowFPView ()
@@ -47,7 +50,6 @@ public class SwitchViews : MonoBehaviour
 	}
 
 	void ChangeCharacterPosition(Vector3 pos){
-		//Debug.Log (character.transform.position);
 		character.transform.position = pos;
 		crosshair.enabled = false;
 

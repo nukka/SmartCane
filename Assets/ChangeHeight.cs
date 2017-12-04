@@ -8,6 +8,7 @@ public class ChangeHeight : MonoBehaviour
 
 	void Start ()
 	{
+
 		controller = GetComponent<CharacterController> ();
 	
 	}

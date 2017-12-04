@@ -14,6 +14,10 @@ public class raycastscript : MonoBehaviour
 	public GameObject pointOfInterest;
 	public SwitchViews _SwitchViews;
 
+	private int count = 0;
+	private GameObject firstPoint;
+
+
 
 	// Use this for initialization
 	void Start ()
@@ -35,9 +39,12 @@ public class raycastscript : MonoBehaviour
 
 		PlacePointType ();
 
+
 	}
 
-	private Vector3 hitPoint = new Vector3(0, 0, 0);
+
+	private Vector3 hitPoint = new Vector3 (0, 0, 0);
+
 	void Shoot (GameObject pointType)
 	{
 		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
@@ -59,11 +66,12 @@ public class raycastscript : MonoBehaviour
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
 		Instantiate (pointType, objPosition, rotation);
-
+		CreateID (Instantiate (pointType, objPosition, rotation));
 
 	}
 
-	void PlacePointType(){
+	void PlacePointType ()
+	{
 		if (Input.GetMouseButton (0)) {
 			if (canPlace) {
 				Shoot (regularPoint);
@@ -76,6 +84,27 @@ public class raycastscript : MonoBehaviour
 			}
 		}
 	}
+
+	public void CreateID (GameObject point)
+	{
+		
+		point.name = "rPoint" + count;
+		Debug.Log (point.name);
+
+		point = GameObject.Find ("rPoint0");
+		Debug.Log (point.transform.position);
+
+		count++;
+
+	}
+
+	public Vector3 GetFirstPointPosition ()
+	{
+		firstPoint = GameObject.Find ("rPoint0");
+		//Debug.Log (point.transform.position);
+		return firstPoint.transform.position;
+	}
+
 
 
 }
