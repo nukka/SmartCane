@@ -55,18 +55,19 @@ public class raycastscript : MonoBehaviour
 			hitPoint = hit.point;
 			hitPoint.y = 0.05F;
 
-			PlacePoint (hitPoint, pointType);
+			CreatePoint (hitPoint, pointType);
 
 
 		}
 	
 	}
 
-	void PlacePoint (Vector3 objPosition, GameObject pointType)
+	void CreatePoint (Vector3 objPosition, GameObject pointType)
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
-		Instantiate (pointType, objPosition, rotation);
-		CreateID (Instantiate (pointType, objPosition, rotation));
+		GameObject point = Instantiate (pointType, objPosition, rotation);
+		point.gameObject.tag = "Point";
+		CreateID (point);
 
 	}
 
@@ -87,12 +88,9 @@ public class raycastscript : MonoBehaviour
 
 	public void CreateID (GameObject point)
 	{
-		
+		List<int> list = new List<int> ();
 		point.name = "rPoint" + count;
 		Debug.Log (point.name);
-
-		point = GameObject.Find ("rPoint0");
-		Debug.Log (point.transform.position);
 
 		count++;
 
@@ -101,10 +99,18 @@ public class raycastscript : MonoBehaviour
 	public Vector3 GetFirstPointPosition ()
 	{
 		firstPoint = GameObject.Find ("rPoint0");
-		//Debug.Log (point.transform.position);
 		return firstPoint.transform.position;
 	}
 
+	public void DeletePoints ()
+	{
+		GameObject[] listOfPoints;
 
+		listOfPoints = GameObject.FindGameObjectsWithTag ("Point");
+
+		for (int i = 0; i < count; i++) {
+			Destroy (listOfPoints [i]);
+		}
+	}
 
 }

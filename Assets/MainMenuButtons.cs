@@ -9,7 +9,7 @@ public class MainMenuButtons : MonoBehaviour {
 
 
 	public void StartBtn (string NewSimulationLevel) {
-		Handheld.Vibrate ();
+		
 		SceneManager.LoadScene (NewSimulationLevel);
 		
 	}

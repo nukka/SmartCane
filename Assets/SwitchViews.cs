@@ -28,6 +28,12 @@ public class SwitchViews : MonoBehaviour
 			ShowFPView ();
 			ChangeCharacterPosition (_raycastscrip.GetFirstPointPosition());
 		}
+
+		if (Input.GetKeyDown (KeyCode.F3)) {
+			_raycastscrip.DeletePoints ();
+
+		}
+			
 	
 	}
 
@@ -42,7 +48,7 @@ public class SwitchViews : MonoBehaviour
 
 	public void ShowMapView ()
 	{
-		intructionText.text = "Place points to map, press F2 when ready";
+		intructionText.text = "Place points to map, press F2 when ready \nPress F3 to delete all the points";
 		_ChangeHeight.change (15F);
 		pointTypeIntroduction.text = "Mouse right click = Regular point \nMouse left click = POI";  
 		crosshair.enabled = true;
