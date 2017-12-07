@@ -16,17 +16,22 @@ public class SwitchViews : MonoBehaviour
 
 
 
+	void Start(){
+
+	}
 	void Update ()
 	{
 
 		if (Input.GetKeyDown (KeyCode.F1)) {
 			ShowMapView ();
+			_raycastscrip.MakeObjectVisible (false);
 
 		}
 
 		if (Input.GetKeyDown (KeyCode.F2)) {
 			ShowFPView ();
 			ChangeCharacterPosition (_raycastscrip.GetFirstPointPosition());
+			_raycastscrip.MakeObjectVisible (true);
 		}
 
 		if (Input.GetKeyDown (KeyCode.F3)) {

@@ -17,12 +17,15 @@ public class raycastscript : MonoBehaviour
 	private int count = 0;
 	private GameObject firstPoint;
 
+	public Renderer rend;
+
 
 
 	// Use this for initialization
 	void Start ()
 	{
 		_SwitchViews.ShowMapView ();
+		MakeObjectVisible (false);
 	}
 	
 	// Update is called once per frame
@@ -38,6 +41,7 @@ public class raycastscript : MonoBehaviour
 		}
 
 		PlacePointType ();
+
 
 
 	}
@@ -88,10 +92,8 @@ public class raycastscript : MonoBehaviour
 
 	public void CreateID (GameObject point)
 	{
-		List<int> list = new List<int> ();
 		point.name = "rPoint" + count;
 		Debug.Log (point.name);
-
 		count++;
 
 	}
@@ -112,5 +114,11 @@ public class raycastscript : MonoBehaviour
 			Destroy (listOfPoints [i]);
 		}
 	}
+
+	public void MakeObjectVisible(bool b){
+		rend = GetComponent<Renderer>();
+		rend.enabled = b;
+	}
+
 
 }

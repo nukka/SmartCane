@@ -3926,6 +3926,7 @@ MonoBehaviour:
   regularPoint: {fileID: 1289484131}
   pointOfInterest: {fileID: 1213419051}
   _SwitchViews: {fileID: 1270611603}
+  rend: {fileID: 890932087}
 --- !u!1001 &891502444
 Prefab:
   m_ObjectHideFlags: 0
@@ -4588,7 +4589,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 984334988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 391.6109, y: 78.46026, z: -8.662149}
+  m_LocalPosition: {x: 391.6109, y: 77.46026, z: -8.662149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 854999118}
