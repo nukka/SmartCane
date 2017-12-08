@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 public class raycastscript : MonoBehaviour
 {
+	public const double pointDistance = 2;
 	public float range;
 	public float rate;
 	private float curRate;
 	private bool canPlace;
 	public Transform pointSpawn;
+	private Vector3 hitPoint = new Vector3 (0, 0, 0);
 	public GameObject regularPoint;
 	public GameObject pointOfInterest;
 	public SwitchViews _SwitchViews;
-
+	public Renderer rend;
 	private int count = 0;
 	private GameObject firstPoint;
+	bool first = true;
 
-	public Renderer rend;
+
+	private Vector3 prevPoint = new Vector3 (0, 0, 0);
+	private Vector3 middlePoint = new Vector3 (0, 0, 0);
+
+
+
 
 
 
@@ -43,17 +52,19 @@ public class raycastscript : MonoBehaviour
 		PlacePointType ();
 
 
-
 	}
 
 
-	private Vector3 hitPoint = new Vector3 (0, 0, 0);
+
 
 	void Shoot (GameObject pointType)
 	{
+		
 		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
 		RaycastHit hit;
 
+
+		Debug.Log (pointSpawn.transform.position);
 		if (Physics.Raycast (ray, out hit, range)) {
 			Debug.Log ("Hit " + hit.collider.name);	
 			hitPoint = hit.point;
@@ -61,6 +72,12 @@ public class raycastscript : MonoBehaviour
 
 			CreatePoint (hitPoint, pointType);
 
+			if (!first) {
+				PlacePointsBetweenPoints ();
+			}
+
+			first = false;
+			prevPoint = hitPoint;
 
 		}
 	
@@ -115,10 +132,33 @@ public class raycastscript : MonoBehaviour
 		}
 	}
 
-	public void MakeObjectVisible(bool b){
-		rend = GetComponent<Renderer>();
+	public void MakeObjectVisible (bool b)
+	{
+		rend = GetComponent<Renderer> ();
 		rend.enabled = b;
+
 	}
 
+	void PlacePointsBetweenPoints ()
+	{
 
+		float distance = 0;
+		float linePositionLength;
+		float linePosition;
+
+		distance = Vector3.Distance (prevPoint, hitPoint);
+		int pointCount = (int)Math.Ceiling (distance / pointDistance);
+
+		linePositionLength = 1 / (float)pointCount;
+		linePosition = linePositionLength;
+		Debug.Log ("line pos length: " + linePositionLength + " and pointCount: " + pointCount);
+
+		for (int i = 0; i <= pointCount; i++) {
+
+			middlePoint = Vector3.Lerp (prevPoint, hitPoint, linePosition);
+			Debug.Log ("line pos: " + linePosition + "and i: " + i);
+			linePosition += linePositionLength;
+			CreatePoint (middlePoint, regularPoint);
+		}
+	}
 }

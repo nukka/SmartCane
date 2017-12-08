@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class SwitchViews : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class SwitchViews : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.F1)) {
 			ShowMapView ();
 			_raycastscrip.MakeObjectVisible (false);
+		
+			GamePad.SetVibration (0, 1f, 1f);
+
 
 		}
 
@@ -38,7 +42,7 @@ public class SwitchViews : MonoBehaviour
 			_raycastscrip.DeletePoints ();
 
 		}
-			
+
 	
 	}
 
