@@ -19,7 +19,7 @@ public class raycastscript : MonoBehaviour
 	public Renderer rend;
 	private int count = 0;
 	private GameObject firstPoint;
-	bool first = true;
+	public bool first = true;
 
 
 	private Vector3 prevPoint = new Vector3 (0, 0, 0);
@@ -161,4 +161,5 @@ public class raycastscript : MonoBehaviour
 			CreatePoint (middlePoint, regularPoint);
 		}
 	}
+
 }
