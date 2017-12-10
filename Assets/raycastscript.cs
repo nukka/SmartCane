@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Linq;
 
 public class raycastscript : MonoBehaviour
 {
@@ -120,12 +120,14 @@ public class raycastscript : MonoBehaviour
 
 	public void DeletePoints ()
 	{
-		GameObject[] listOfPoints;
+		GameObject[] allPts;
 
-		listOfPoints = GameObject.FindGameObjectsWithTag ("Point");
+		GameObject[] regPts = GameObject.FindGameObjectsWithTag("RegularPoint");
+		GameObject[] poiPts = GameObject.FindGameObjectsWithTag("POI");
+		allPts = regPts.Concat(poiPts).ToArray();
 
 		for (int i = 0; i < count; i++) {
-			Destroy (listOfPoints [i]);
+			Destroy (allPts [i]);
 		}
 	}
 
