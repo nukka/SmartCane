@@ -15,8 +15,6 @@ public class SwitchViews : MonoBehaviour
 
 	public raycastscript _raycastscrip;
 
-
-
 	void Start(){
 
 	}
@@ -31,7 +29,9 @@ public class SwitchViews : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.F2)) {
 			ShowFPView ();
-			ChangeCharacterPosition (_raycastscrip.GetFirstPointPosition());
+			if(_raycastscrip.first == false) {
+				ChangeCharacterPosition (_raycastscrip.GetFirstPointPosition());
+			}
 			_raycastscrip.MakeObjectVisible (true);
 		}
 
