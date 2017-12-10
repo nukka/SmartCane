@@ -20,14 +20,8 @@ public class raycastscript : MonoBehaviour
 	private int count = 0;
 	private GameObject firstPoint;
 	public bool first = true;
-
-
 	private Vector3 prevPoint = new Vector3 (0, 0, 0);
 	private Vector3 middlePoint = new Vector3 (0, 0, 0);
-
-
-
-
 
 
 	// Use this for initialization
@@ -51,7 +45,6 @@ public class raycastscript : MonoBehaviour
 
 		PlacePointType ();
 
-
 	}
 
 
@@ -62,11 +55,9 @@ public class raycastscript : MonoBehaviour
 		
 		Ray ray = new Ray (pointSpawn.transform.position, pointSpawn.transform.forward);
 		RaycastHit hit;
-
-
-		Debug.Log (pointSpawn.transform.position);
+	
 		if (Physics.Raycast (ray, out hit, range)) {
-			Debug.Log ("Hit " + hit.collider.name);	
+			//Debug.Log ("Hit " + hit.collider.name);	
 			hitPoint = hit.point;
 			hitPoint.y = 0.05F;
 
@@ -87,7 +78,16 @@ public class raycastscript : MonoBehaviour
 	{
 		Quaternion rotation = Quaternion.Euler (0, 0, 0);
 		GameObject point = Instantiate (pointType, objPosition, rotation);
-		point.gameObject.tag = "Point";
+
+		if (pointType.gameObject.name == "RegularPoint") {
+			point.gameObject.tag = "RegularPoint";
+		}
+
+		if (pointType.gameObject.name == "PointOfInterest") {
+			point.gameObject.tag = "POI";
+		}
+
+
 		CreateID (point);
 
 	}
@@ -151,12 +151,12 @@ public class raycastscript : MonoBehaviour
 
 		linePositionLength = 1 / (float)pointCount;
 		linePosition = linePositionLength;
-		Debug.Log ("line pos length: " + linePositionLength + " and pointCount: " + pointCount);
+		//Debug.Log ("line pos length: " + linePositionLength + " and pointCount: " + pointCount);
 
 		for (int i = 0; i <= pointCount; i++) {
 
 			middlePoint = Vector3.Lerp (prevPoint, hitPoint, linePosition);
-			Debug.Log ("line pos: " + linePosition + "and i: " + i);
+			//Debug.Log ("line pos: " + linePosition + "and i: " + i);
 			linePosition += linePositionLength;
 			CreatePoint (middlePoint, regularPoint);
 		}
