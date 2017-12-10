@@ -47,9 +47,6 @@ public class raycastscript : MonoBehaviour
 
 	}
 
-
-
-
 	void Shoot (GameObject pointType)
 	{
 		
