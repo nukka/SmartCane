@@ -20,6 +20,7 @@ public class raycastscript : MonoBehaviour
 	private int count = 0;
 	private GameObject firstPoint;
 	public bool first = true;
+	public bool pointAssistantOn = true;
 	private Vector3 prevPoint = new Vector3 (0, 0, 0);
 	private Vector3 middlePoint = new Vector3 (0, 0, 0);
 
@@ -60,7 +61,7 @@ public class raycastscript : MonoBehaviour
 
 			CreatePoint (hitPoint, pointType);
 
-			if (!first) {
+			if (!first & pointAssistantOn) {
 				PlacePointsBetweenPoints ();
 			}
 
