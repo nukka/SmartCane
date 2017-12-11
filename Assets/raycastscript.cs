@@ -92,15 +92,15 @@ public class raycastscript : MonoBehaviour
 
 	void PlacePointType ()
 	{
-		if (Input.GetMouseButton (0)) {
-			if (canPlace) {
-				Shoot (regularPoint);
-			}
+		if (!canPlace) {
+			return;
 		}
 
-		if (Input.GetMouseButton (1)) {
-			if (canPlace) {
-				Shoot (pointOfInterest);
+		GameObject[] pointTypes = { regularPoint, pointOfInterest };
+		int len = pointTypes.Length;
+		for (int i = 0; i < len; ++i) {
+			if (Input.GetMouseButton (i)) {
+				Shoot (pointTypes [i]);
 			}
 		}
 	}
@@ -123,9 +123,9 @@ public class raycastscript : MonoBehaviour
 	{
 		GameObject[] allPts;
 
-		GameObject[] regPts = GameObject.FindGameObjectsWithTag("RegularPoint");
-		GameObject[] poiPts = GameObject.FindGameObjectsWithTag("POI");
-		allPts = regPts.Concat(poiPts).ToArray();
+		GameObject[] regPts = GameObject.FindGameObjectsWithTag ("RegularPoint");
+		GameObject[] poiPts = GameObject.FindGameObjectsWithTag ("POI");
+		allPts = regPts.Concat (poiPts).ToArray ();
 
 		for (int i = 0; i < count; i++) {
 			Destroy (allPts [i]);
