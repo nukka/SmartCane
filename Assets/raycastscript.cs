@@ -30,6 +30,8 @@ public class raycastscript : MonoBehaviour
 	{
 		_SwitchViews.ShowMapView ();
 		MakeObjectVisible (false);
+
+	
 	}
 	
 	// Update is called once per frame

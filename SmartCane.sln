@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane", "Assembly-CShar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane", "Assembly-CSharp-Editor-firstpass.csproj", "{D88B8F4A-4ABF-AA4E-1C6F-7DF648DC7DE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCane", "Assembly-CSharp-Editor.csproj", "{8F7C4E9A-650B-45DC-78F9-9ED5A2B53251}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D88B8F4A-4ABF-AA4E-1C6F-7DF648DC7DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D88B8F4A-4ABF-AA4E-1C6F-7DF648DC7DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D88B8F4A-4ABF-AA4E-1C6F-7DF648DC7DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7C4E9A-650B-45DC-78F9-9ED5A2B53251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7C4E9A-650B-45DC-78F9-9ED5A2B53251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7C4E9A-650B-45DC-78F9-9ED5A2B53251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7C4E9A-650B-45DC-78F9-9ED5A2B53251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
