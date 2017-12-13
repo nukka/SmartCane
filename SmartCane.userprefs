@@ -2,11 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VibrationScript.cs">
     <Files>
-      <File FileName="Assets\raycastscript.cs" Line="24" Column="52" />
+      <File FileName="Assets\raycastscript.cs" Line="25" Column="6" />
       <File FileName="Assets\MainMenuButtons.cs" Line="1" Column="1" />
       <File FileName="Assets\SwitchViews.cs" Line="1" Column="1" />
-      <File FileName="Assets\ChangeHeight.cs" Line="5" Column="40" />
-      <File FileName="Assets\VibrationScript.cs" Line="13" Column="41" />
+      <File FileName="Assets\ChangeHeight.cs" Line="1" Column="1" />
+      <File FileName="Assets\VibrationScript.cs" Line="18" Column="43" />
+      <File FileName="Assets\VibrationPattern.cs" Line="25" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
