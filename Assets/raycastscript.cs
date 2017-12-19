@@ -123,13 +123,15 @@ public class raycastscript : MonoBehaviour
 
 	public void DeletePoints ()
 	{
+		first = true;
+		count = 0;
 		GameObject[] allPts;
 
 		GameObject[] regPts = GameObject.FindGameObjectsWithTag ("RegularPoint");
 		GameObject[] poiPts = GameObject.FindGameObjectsWithTag ("POI");
 		allPts = regPts.Concat (poiPts).ToArray ();
 
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < allPts.Length; i++) {
 			Destroy (allPts [i]);
 		}
 	}
@@ -155,7 +157,7 @@ public class raycastscript : MonoBehaviour
 		linePosition = linePositionLength;
 		//Debug.Log ("line pos length: " + linePositionLength + " and pointCount: " + pointCount);
 
-		for (int i = 0; i <= pointCount; i++) {
+		for (int i = 0; i <= pointCount - 1; i++) {
 
 			middlePoint = Vector3.Lerp (prevPoint, hitPoint, linePosition);
 			//Debug.Log ("line pos: " + linePosition + "and i: " + i);

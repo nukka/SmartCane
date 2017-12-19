@@ -9,8 +9,6 @@ public class VibrationPattern : MonoBehaviour {
 	public int playerId = 0; // The Rewired player id of this character
 
 	public float moveSpeed = 3.0f;
-	public float bulletSpeed = 15.0f;
-	public GameObject bulletPrefab;
 
 	private Player player; // The Rewired Player
 	private CharacterController cc;

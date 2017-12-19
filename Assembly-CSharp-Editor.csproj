@@ -102,6 +102,9 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>D:/annuk/Documents/YLIOPISTO TEHTÄVIÄ/Smartcane/SmartCane/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
